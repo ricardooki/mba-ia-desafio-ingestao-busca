@@ -24,7 +24,7 @@ services:
         condition: service_healthy
     entrypoint: ["/bin/sh", "-c"]
     command: >
-      PGPASSWORD=postgres
+      PGPASSWORD=
       psql "postgresql://postgres@postgres:5432/rag" -v ON_ERROR_STOP=1
       -c "CREATE EXTENSION IF NOT EXISTS vector;"
     restart: "no"
